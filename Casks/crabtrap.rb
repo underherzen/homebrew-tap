@@ -1,4 +1,3 @@
-# Шаблон cask: 0.1.0, c6ccbfa69d88df71ccc0c4dd7005fdffbb1314c6951fd081b4b1819cdac641f7, underherzen/crabtrap подставляет .github/workflows/homebrew.yml.
 cask "crabtrap" do
   version "0.1.0"
   sha256 "c6ccbfa69d88df71ccc0c4dd7005fdffbb1314c6951fd081b4b1819cdac641f7"
@@ -13,12 +12,11 @@ cask "crabtrap" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "crabtrap.app"
 
-  # Сборка не нотаризована (ad-hoc подпись): снимаем карантин, иначе
-  # Gatekeeper не даст запустить приложение.
+  # Not notarized (ad-hoc signature): drop quarantine so Gatekeeper lets it launch.
   postflight do
     system_command "/usr/bin/xattr",
                    args: ["-dr", "com.apple.quarantine", "#{appdir}/crabtrap.app"]
