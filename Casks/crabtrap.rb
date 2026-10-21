@@ -1,6 +1,6 @@
 cask "crabtrap" do
-  version "0.1.0"
-  sha256 "c6ccbfa69d88df71ccc0c4dd7005fdffbb1314c6951fd081b4b1819cdac641f7"
+  version "0.2.1"
+  sha256 "c4e8ad52fb7d4b5858f9f5b116d68598d1a8b80fbc139afffe6ee95c76d49abc"
 
   url "https://github.com/underherzen/crabtrap/releases/download/v#{version}/crabtrap-#{version}-macos-universal.dmg"
   name "crabtrap"
